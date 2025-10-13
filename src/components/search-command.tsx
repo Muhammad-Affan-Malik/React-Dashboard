@@ -46,7 +46,11 @@ export function SearchCommand() {
       >
         <Search className="h-5 w-5 text-primary" />
       </button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog 
+        open={open} 
+        onOpenChange={setOpen}
+        className="!top-4 !translate-y-0 md:!top-[50%] md:!translate-y-[-50%]"
+      >
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
