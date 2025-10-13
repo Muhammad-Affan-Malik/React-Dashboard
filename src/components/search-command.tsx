@@ -39,6 +39,7 @@ export function SearchCommand() {
       </button>
 
       {/* Mobile Search Icon */}
+      {/* Dimensions for mobile seacrh button */}
       <button
         onClick={() => setOpen(true)}
         className="md:hidden p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-all"
