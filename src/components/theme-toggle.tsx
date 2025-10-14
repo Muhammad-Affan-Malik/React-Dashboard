@@ -16,7 +16,7 @@ export function ThemeToggle() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative hover:bg-muted/50 transition-all text-black dark:text-white hover:text-black dark:hover:text-white"
+          className="relative hover:bg-muted/50 dark:hover:bg-muted/30 transition-all text-foreground hover:text-foreground"
         >
           {theme === 'light' ? (
             <Sun className="h-5 w-5" />
@@ -29,7 +29,7 @@ export function ThemeToggle() {
         <div className="space-y-1">
           <Button
             variant="ghost"
-            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 transition-colors ${
+            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 dark:hover:bg-muted/50 transition-colors ${
               theme === 'light' ? 'bg-muted' : ''
             }`}
             onClick={() => setTheme('light')}
@@ -39,7 +39,7 @@ export function ThemeToggle() {
           </Button>
           <Button
             variant="ghost"
-            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 transition-colors ${
+            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 dark:hover:bg-muted/50 transition-colors ${
               theme === 'dark' ? 'bg-muted' : ''
             }`}
             onClick={() => setTheme('dark')}

@@ -52,7 +52,7 @@ export function Notifications() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative hover:bg-muted/50 transition-all text-foreground hover:text-foreground"
+          className="relative hover:bg-muted/50 dark:hover:bg-muted/30 transition-all text-foreground hover:text-foreground"
         >
           <Bell className="h-5 w-5" />
           {unreadCount > 0 && (
@@ -77,7 +77,7 @@ export function Notifications() {
             const Icon = notification.icon
             return (
               <div key={notification.id}>
-                <div className="flex items-start gap-3 p-4 hover:bg-muted/50 transition-all cursor-pointer">
+                <div className="flex items-start gap-3 p-4 hover:bg-muted/50 dark:hover:bg-muted/30 transition-all cursor-pointer">
                   <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${notification.bgColor} shadow-sm`}>
                     <Icon className={`h-4 w-4 ${notification.iconColor}`} />
                   </div>
@@ -103,7 +103,7 @@ export function Notifications() {
         </div>
         <Separator />
         <div className="p-2">
-          <Button variant="ghost" className="w-full justify-center text-sm hover:bg-muted/50">
+          <Button variant="ghost" className="w-full justify-center text-sm hover:bg-muted/50 dark:hover:bg-muted/30 hover:text-foreground">
             View all notifications
           </Button>
         </div>

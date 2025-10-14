@@ -29,10 +29,10 @@ export function AppSidebar({ activeItem, onItemClick }: AppSidebarProps) {
     <Sidebar className="border-r border-border/30 bg-gradient-to-b from-card via-card/98 to-card/95 backdrop-blur-xl">
       <SidebarHeader className="border-b border-primary/10">
         <div className="flex h-16 items-center px-6 gap-3">
-          <div className="p-2 bg-white rounded-lg shadow-md border border-border">
-            <LayoutDashboard className="h-5 w-5 text-black" />
+          <div className="p-2 bg-card dark:bg-muted rounded-lg shadow-md border border-border">
+            <LayoutDashboard className="h-5 w-5 text-foreground" />
           </div>
-          <h1 className="text-xl font-bold tracking-tight text-black">
+          <h1 className="text-xl font-bold tracking-tight text-foreground">
             Dashboard
           </h1>
         </div>
