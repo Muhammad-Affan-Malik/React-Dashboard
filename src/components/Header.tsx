@@ -1,6 +1,7 @@
 import { SidebarTrigger } from "./ui/sidebar"
 import { SearchCommand } from "./search-command"
 import { Notifications } from "./notifications"
+import { ThemeToggle } from "./theme-toggle"
 import { UserNav } from "./user-nav"
 import { Home, BarChart3, Users, Settings, FileText } from "lucide-react"
 
@@ -40,10 +41,10 @@ export function Header({ activeItem, sidebarOpen }: HeaderProps) {
           </div>
 
           <div className="flex items-center gap-2 min-w-[140px]">
-            <div className="p-1.5 bg-white rounded-lg shadow-md border border-border">
-              <Icon className="h-4 w-4 text-black" />
+            <div className="p-1.5 bg-card dark:bg-muted rounded-lg shadow-md border border-border">
+              <Icon className="h-4 w-4 text-foreground" />
             </div>
-            <h1 className="text-lg font-bold tracking-tight sm:text-xl text-black">
+            <h1 className="text-lg font-bold tracking-tight sm:text-xl text-foreground">
               {activeItem}
             </h1>
           </div>
@@ -59,6 +60,7 @@ export function Header({ activeItem, sidebarOpen }: HeaderProps) {
           <div className="md:hidden">
             <SearchCommand />
           </div>
+          <ThemeToggle />
           <Notifications />
           <UserNav />
         </div>

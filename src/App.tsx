@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { SidebarProvider, SidebarInset, useSidebar } from "@/components/ui/sidebar"
+import { ThemeProvider } from "@/contexts/ThemeContext"
 import { AppSidebar } from "@/components/app-sidebar"
 import { Header } from "@/components/Header"
 import { MainContent } from "@/components/MainContent"
@@ -27,9 +28,11 @@ function AppContent() {
 
 function App() {
   return (
-    <SidebarProvider defaultOpen={false}>
-      <AppContent />
-    </SidebarProvider>
+    <ThemeProvider>
+      <SidebarProvider defaultOpen={false}>
+        <AppContent />
+      </SidebarProvider>
+    </ThemeProvider>
   )
 }
 

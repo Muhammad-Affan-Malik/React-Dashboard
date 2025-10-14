@@ -67,7 +67,7 @@ const recentActivities = [
 export function MainContent() {
   // Main content component without props
   return (
-    <main className="min-h-screen w-full bg-gray-100">
+    <main className="min-h-screen w-full bg-background">
       <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
         {/* Stats Cards Grid */}
@@ -157,7 +157,7 @@ export function MainContent() {
                 gradient="from-blue-500 to-blue-600"
               />
 
-              <Button className="w-full mt-2 bg-white text-black border border-border hover:bg-muted hover:text-black shadow-md hover:shadow-lg transition-all hover:scale-[1.02]" size="sm" variant="outline">
+              <Button className="w-full mt-2 bg-card text-foreground border border-border hover:bg-muted hover:text-foreground shadow-md hover:shadow-lg transition-all hover:scale-[1.02]" size="sm" variant="outline">
                 View Full Report
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>

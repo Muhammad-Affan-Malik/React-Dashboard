@@ -52,7 +52,7 @@ export function Notifications() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative hover:bg-muted/50 transition-all text-black hover:text-black"
+          className="relative hover:bg-muted/50 transition-all text-foreground hover:text-foreground"
         >
           <Bell className="h-5 w-5" />
           {unreadCount > 0 && (
@@ -103,7 +103,7 @@ export function Notifications() {
         </div>
         <Separator />
         <div className="p-2">
-          <Button variant="ghost" className="w-full justify-center text-sm hover:bg-muted/50 text-black hover:text-black">
+          <Button variant="ghost" className="w-full justify-center text-sm hover:bg-muted/50">
             View all notifications
           </Button>
         </div>
