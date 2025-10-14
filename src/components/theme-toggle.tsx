@@ -29,7 +29,7 @@ export function ThemeToggle() {
         <div className="space-y-1">
           <Button
             variant="ghost"
-            className={`w-full justify-start text-sm ${
+            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 transition-colors ${
               theme === 'light' ? 'bg-muted' : ''
             }`}
             onClick={() => setTheme('light')}
@@ -39,7 +39,7 @@ export function ThemeToggle() {
           </Button>
           <Button
             variant="ghost"
-            className={`w-full justify-start text-sm ${
+            className={`w-full justify-start text-sm text-foreground hover:text-foreground hover:bg-muted/70 transition-colors ${
               theme === 'dark' ? 'bg-muted' : ''
             }`}
             onClick={() => setTheme('dark')}

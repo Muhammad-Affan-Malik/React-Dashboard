@@ -10,20 +10,29 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
+// Get initial theme from localStorage, defaulting to 'light'
+function getInitialTheme(): Theme {
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('theme') as Theme | null
+    // Always default to 'light' if no saved theme
+    return savedTheme || 'light'
+  }
+  return 'light'
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
 
   useEffect(() => {
-    // Check for saved theme preference, default to 'light'
-    const savedTheme = localStorage.getItem('theme') as Theme | null
-    const initialTheme = savedTheme || 'light'
-    setTheme(initialTheme)
+    // Ensure the document class is correct on mount
+    const currentTheme = getInitialTheme()
     
-    // Apply theme to document
-    if (initialTheme === 'dark') {
+    // Remove dark class first to ensure clean state
+    document.documentElement.classList.remove('dark')
+    
+    // Only add dark class if theme is explicitly dark
+    if (currentTheme === 'dark') {
       document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
     }
   }, [])
 
