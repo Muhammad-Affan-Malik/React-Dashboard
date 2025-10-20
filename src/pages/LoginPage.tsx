@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Link, useNavigate } from "react-router-dom"
-import { IoStarOutline, IoPersonOutline, IoLockClosedOutline, IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
+import { useNavigate } from "react-router-dom"
+import { IoPersonOutline, IoLockClosedOutline, IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import LOGO from "@/assets/LOGO.png"
 import LoginCarousel from "@/assets/LoginCarousel.png"
 import LoginCarousel1 from "@/assets/LoginCarousel1.png"
@@ -18,6 +18,7 @@ interface FormErrors {
   general?: string
 }
 
+{/* ERROR RESOLVED VERCEL DEPLOYMENT */}
 const LoginPage = () => {
   const [formData, setFormData] = useState<LoginForm>({
     userId: "",
