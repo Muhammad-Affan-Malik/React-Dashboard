@@ -1,37 +1,25 @@
-import { useState } from "react"
-import { SidebarProvider, SidebarInset, useSidebar } from "@/components/ui/sidebar"
+import { Routes, Route, Navigate } from "react-router-dom"
 import { ThemeProvider } from "@/contexts/ThemeContext"
-import { AppSidebar } from "@/components/app-sidebar"
-import { Header } from "@/components/Header"
-import { MainContent } from "@/components/MainContent"
-
-function AppContent() {
-  const [activeItem, setActiveItem] = useState("Dashboard")
-  const { open, setOpen } = useSidebar()
-
-  const handleContentClick = () => {
-    if (open) {
-      setOpen(false)
-    }
-  }
-
-  return (
-    <div className="relative flex min-h-screen w-full">
-      <AppSidebar activeItem={activeItem} onItemClick={setActiveItem} />
-      <SidebarInset className="flex-1" onClick={handleContentClick}>
-        <Header activeItem={activeItem} sidebarOpen={open} />
-        <MainContent />
-      </SidebarInset>
-    </div>
-  )
-}
+import LoginPage from "@/pages/LoginPage"
+import DashboardPage from "@/pages/DashboardPage"
+import ProtectedRoute from "@/components/ProtectedRoute"
 
 function App() {
   return (
     <ThemeProvider>
-      <SidebarProvider defaultOpen={false}>
-        <AppContent />
-      </SidebarProvider>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <DashboardPage />
+            </ProtectedRoute>
+          } 
+        />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      </Routes>
     </ThemeProvider>
   )
 }
